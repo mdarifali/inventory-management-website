@@ -17,8 +17,6 @@ const Shop = () => {
                     />)
                 }
             </div>
-
-            <h1>Selected: {}</h1>
         </section>
     );
 };

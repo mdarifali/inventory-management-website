@@ -17,15 +17,15 @@ const Header = () => {
                             navbarScroll
                         >   
                             <div className='nav-item'>
-                                <Link className='nav-link' to='/home'>Home</Link>
+                                <Link className='nav-link' to='/home'>HOME</Link>
                             </div>
                             <div className='nav-item'>
-                                <Link className='nav-link' to='/shoping'>Shoping</Link>
+                                <Link className='nav-link' to='/shop'>SHOP</Link>
                             </div>
                             <div className='nav-item'>
-                                <Link className='nav-link' to='/order'>Order </Link>
+                                <Link className='nav-link' to='/order'>Order</Link>
                             </div>
-                            <Nav.Link href="#action2">Login</Nav.Link>
+                            <Nav.Link href="#action2">LOGIN</Nav.Link>
                         </Nav>
                         <Form className="d-flex">
                             <FormControl
