@@ -1,0 +1,26 @@
+import useHook from '../useHook/useHook';
+import Product from './Product';
+
+
+const Shop = () => {
+
+    const [products] = useHook();
+
+    return (
+        <section className='container'>
+            <div className="row g-5">
+                <h1 className='text-center'>Total Product: {products.length}</h1>
+                {
+                    products.map(product => <Product 
+                        key={product._id}
+                        product={product}
+                    />)
+                }
+            </div>
+
+            <h1>Selected: {}</h1>
+        </section>
+    );
+};
+
+export default Shop;
