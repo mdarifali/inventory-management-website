@@ -25,7 +25,9 @@ const Header = () => {
                             <div className='nav-item'>
                                 <Link className='nav-link' to='/order'>Order</Link>
                             </div>
-                            <Nav.Link href="#action2">LOGIN</Nav.Link>
+                            <div className='nav-item'>
+                                <Link className='nav-link' to='/login'>LOGIN</Link>
+                            </div>
                         </Nav>
                         <Form className="d-flex">
                             <FormControl
