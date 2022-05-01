@@ -1,18 +1,26 @@
-import { Button, Container, Form, FormControl, Nav, Navbar } from 'react-bootstrap';
+import './Header.css';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { IoIosContact } from 'react-icons/io';
+import auth from '../../FirebaseAuth';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
 
 
 const Header = () => {
 
+    const [user] = useAuthState(auth)
+
     return (
+
         <div>
-            <Navbar bg="dark" variant="dark" expand="lg" className='fixed-top'>
+            <Navbar expand="lg" variant="dark" className='fixed-top' id='navbar-bg'>
                 <Container>
                     <Navbar.Brand href="#">Super-Deal</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
-                            className="m-auto my-2 my-lg-0"
+                            className="ms-auto my-2 my-lg-0"
                             style={{ maxHeight: '120px' }}
                             navbarScroll
                         >   
@@ -23,21 +31,12 @@ const Header = () => {
                                 <Link className='nav-link' to='/shop'>SHOP</Link>
                             </div>
                             <div className='nav-item'>
-                                <Link className='nav-link' to='/order'>Order</Link>
+                                {
+                                    user ? (<button className='btn btn-outline-danger' onClick={() => signOut(auth)}>Sing Out</button>) : (<Link className='nav-link text-light' to='/login'>LOGIN <IoIosContact className='text-light fs-3 pb-1' /></Link>)
+                                }
                             </div>
-                            <div className='nav-item'>
-                                <Link className='nav-link' to='/login'>LOGIN</Link>
-                            </div>
+                            
                         </Nav>
-                        <Form className="d-flex">
-                            <FormControl
-                                type="search"
-                                placeholder="Search"
-                                className="me-2"
-                                aria-label="Search"
-                            />
-                            <Button variant="outline-success">Search</Button>
-                        </Form>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

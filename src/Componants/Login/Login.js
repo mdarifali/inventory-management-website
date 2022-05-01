@@ -69,11 +69,11 @@ const Login = () => {
             <div className="container py-3 h-100">
                 <div className="row d-flex justify-content-center align-items-center h-100">
                     <div className="col-12 col-md-8 col-lg-6 col-xl-5">
-                        <div className="card bg-light text-dark">
+                        <div id='form-bg' >
                             <div className="card-body px-5 py-3 text-center">
                                 <form onSubmit={handleLogin} className="mb-md-4 mt-md-4 pb-2">
                                     <h2 className="fw-bold mb-2 text-uppercase">Login</h2>
-                                    <p className="text-dark-50 mb-5">Please enter your login and password!</p>
+                                    <p className="text-dark-50 mb-5">Please enter your login email and password!</p>
 
                                     <div className="form-outline form-dark mb-4">
                                         <input type="email" className="form-control form-control-lg" placeholder='Email' onChange={handelEmailChange} required/>
@@ -85,7 +85,7 @@ const Login = () => {
                                         {errors?.password && <p className='text-danger text-start my-2'>{errors.password}</p>}
                                     </div>
                                     <div className='my-4'>
-                                        <Link to='/restpass'>Forgot password?</Link>
+                                        <Link className='text-info' to='/restpass'>Forgot password?</Link>
                                     </div>
                                     <div className="d-grid">
                                         <button className="btn btn-success p-2" type="submit"><FiLogIn className='fs-5'/> Login</button>
@@ -94,7 +94,7 @@ const Login = () => {
                                 </form>
                                 <GoogleAuth />
                                 <div className='pt-3'>
-                                    <Link className="nav-link text-dark-50 fw-bold mb-0" to='/singup'>Don't have an account? Sign Up</Link>
+                                    <Link className="nav-link text-info" to='/singup'>Don't have an account? <span className='text-warning fs-6 fw-bold'>Sign Up Now</span></Link>
                                 </div>
 
                             </div>
