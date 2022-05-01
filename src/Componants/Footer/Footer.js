@@ -1,33 +1,37 @@
 import React from 'react';
+import './Footer.css';
+import { MdOutlineFacebook } from 'react-icons/md';
+import { AiFillGoogleCircle, AiFillTwitterCircle, AiFillInstagram, AiFillGithub, AiFillLinkedin, AiFillHome, AiOutlineMail, AiFillPhone, AiFillPrinter } from 'react-icons/ai';
+import { FaGem } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <div>
+        <div className='mt-5'>
             <footer class="text-center text-lg-start bg-light text-muted">
                 <section
-                    class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+                    class="d-flex justify-content-center justify-content-lg-arround p-4 border-bottom"
                 >
                     <div class="me-5 d-none d-lg-block">
-                        <span>Get connected with us on social networks:</span>
+                        <p>Get connected with us on social networks:</p>
                     </div>
                     <div>
                         <a href="#/" class="me-4 text-reset">
-                            <i class="fab fa-facebook-f"></i>
+                            <MdOutlineFacebook className='fs-4'/>
                         </a>
                         <a href="#/" class="me-4 text-reset">
-                            <i class="fab fa-twitter"></i>
+                            <AiFillTwitterCircle className='fs-4'/>
                         </a>
                         <a href="#/" class="me-4 text-reset">
-                            <i class="fab fa-google"></i>
+                            <AiFillGoogleCircle className='fs-4'/>
                         </a>
                         <a href="#/" class="me-4 text-reset">
-                            <i class="fab fa-instagram"></i>
+                            <AiFillInstagram className='fs-4'/>
                         </a>
                         <a href="#/" class="me-4 text-reset">
-                            <i class="fab fa-linkedin"></i>
+                            <AiFillLinkedin className='fs-4'/>
                         </a>
                         <a href="#/" class="me-4 text-reset">
-                            <i class="fab fa-github"></i>
+                            <AiFillGithub className='fs-4'/>
                         </a>
                     </div>
                 </section>
@@ -36,7 +40,7 @@ const Footer = () => {
                         <div class="row mt-3">
                             <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                                 <h6 class="text-uppercase fw-bold mb-4">
-                                    <i class="fas fa-gem me-3"></i>Company name
+                                    <FaGem className='fs-5'/> Company name
                                 </h6>
                                 <p>
                                     Here you can use rows and columns to organize your footer content. Lorem ipsum
@@ -49,16 +53,16 @@ const Footer = () => {
                                     Products
                                 </h6>
                                 <p>
-                                    <a href="#!" class="text-reset">Angular</a>
+                                    <a href="#!" class="text-reset">Jsvascript</a>
                                 </p>
                                 <p>
                                     <a href="#!" class="text-reset">React</a>
                                 </p>
                                 <p>
-                                    <a href="#!" class="text-reset">Vue</a>
+                                    <a href="#!" class="text-reset">Vanila CSS</a>
                                 </p>
                                 <p>
-                                    <a href="#!" class="text-reset">Laravel</a>
+                                    <a href="#!" class="text-reset">Bootsrap</a>
                                 </p>
                             </div>
 
@@ -84,22 +88,19 @@ const Footer = () => {
                                 <h6 class="text-uppercase fw-bold mb-4">
                                     Contact
                                 </h6>
-                                <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                                <p><AiFillHome className='fs-5'/> New York, NY 10012, US</p>
                                 <p>
-                                    <i class="fas fa-envelope me-3"></i>
-                                    info@example.com
+                                    <AiOutlineMail className='fs-5'/> info@example.com
                                 </p>
-                                <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-                                <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                                <p><AiFillPhone className='fs-5'/> + 01 234 567 88</p>
+                                <p><AiFillPrinter className='fs-5'/> + 01 234 567 89</p>
                             </div>
                         </div>
                     </div>
                 </section>
                 
-
-                <div class="text-center p-4">
-                    © 2021 Copyright:
-                    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                <div class="text-center p-4" id='footer-bottom-bg'>
+                    © 2022 Copyright: Arif Ali
                 </div>
                
             </footer>
