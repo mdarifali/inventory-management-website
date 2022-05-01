@@ -1,10 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Routes } from 'react-router-dom';
+import Footer from './Componants/Footer/Footer';
 import Header from './Componants/Header/Header';
 import Home from './Componants/Home/HomePage';
 import Login from './Componants/Login/Login';
 import RequireAuth from './Componants/RequireAuth/RequireAuth';
 import Shop from './Componants/Shop/Shop';
+import SingUp from './Componants/SingUp/SingUp';
 
 function App() {
 
@@ -20,8 +22,9 @@ function App() {
           </RequireAuth>
         } />
         <Route path='/login' element={<Login />} />
-
+        <Route path='/singup' element={<SingUp />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

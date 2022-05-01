@@ -89,7 +89,7 @@ const SingUp = () => {
             <div className="container py-3 h-100">
                 <div className="row d-flex justify-content-center align-items-center h-100">
                     <div className="col-12 col-md-8 col-lg-6 col-xl-5">
-                        <div className="card bg-light text-dark">
+                        <div id='form-bg'>
                             <div className="card-body p-5 text-center">
                                 <form onSubmit={handleSingup} className="pb-3">
                                     <h2 className="fw-bold mb-2 text-uppercase">Sing Up</h2>
@@ -117,8 +117,8 @@ const SingUp = () => {
                                     </div>
                                 </form>
                                 <GoogleAuth />
-                                <div className='nav-item fw-bold mb-0'>
-                                    <Link className="nav-link" to='/login'><span className='text-dark'>Already have an account?</span><span className='text-danger'> Login Hear</span></Link>
+                                <div className='nav-item fw-bold mt-2   A'>
+                                    <Link className="nav-link" to='/login'><span className='text-light'>Already have an account?</span><span className='text-danger fs-5 fw-bold'> Login Hear</span></Link>
                                 </div>
 
                             </div>
