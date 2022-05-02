@@ -1,9 +1,11 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { AiFillFileAdd } from 'react-icons/ai';
-
+import auth from '../../FirebaseAuth';
 
 
 const AddProducts = () => {
+    const [user] = useAuthState (auth);
 
     const handleAddProduct = data => {
         data.preventDefault();
@@ -11,8 +13,9 @@ const AddProducts = () => {
         const price = data.target.price.value;
         const stock = data.target.stock.value;
         const seller = data.target.seller.value;
+        const img = data.target.img.value;
         const description = data.target.name.value;
-        const allData = {name, price, stock, seller, description};
+        const allData = { name, price, stock, seller, img, description};
         console.log(allData);
         const url = `https://boiling-fjord-43680.herokuapp.com/productapi`;
         fetch(url, {
@@ -25,7 +28,15 @@ const AddProducts = () => {
         .then(res => res.json())
         .then(result => {
             console.log(result);
-        })
+        });
+
+        if(allData){
+            return alert('Data Inserted Success');
+        }
+        else{
+            return alert('Please Enter Valid Data');
+        }
+
     }
     
     return (
@@ -37,10 +48,10 @@ const AddProducts = () => {
                             <div className="card-body p-5 text-center">
                                 <form onSubmit={handleAddProduct} className="pb-3">
                                     <h2 className="fw-bold mb-4 text-uppercase">Enter Products Details</h2>
-{/* 
+
                                     <div className="form-outline form-dark mb-4">
-                                        <input type="email" className="form-control form-control-lg" placeholder='Email' required />
-                                    </div> */}
+                                        <input type="email" className="form-control form-control-lg" placeholder='Email' required value={user?.email}/>
+                                    </div>
 
                                     <div className="form-outline form-dark mb-4">
                                         <input type="text" className="form-control form-control-lg" name='name' placeholder='Product Name' required/>

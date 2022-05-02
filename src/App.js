@@ -8,7 +8,8 @@ import RequireAuth from './Componants/RequireAuth/RequireAuth';
 import ResetPassword from './Componants/ResePasswod/ResetPassword';
 import Shop from './Componants/Shop/Shop';
 import SingUp from './Componants/SingUp/SingUp';
-import AddProducts from './Componants/AddProducts/AddProducts'
+import AddProducts from './Componants/AddProducts/AddProducts';
+import ManageProducts from './Componants/ManageProducts/ManageProducts';
 
 
 function App() {
@@ -24,7 +25,16 @@ function App() {
             <Shop />
           </RequireAuth>
         } />
-        <Route path='/AddProducts' element={<AddProducts />} />
+        <Route path='/AddProducts' element={
+          <RequireAuth>
+            <AddProducts />
+          </RequireAuth>
+        } />
+        <Route path='/ManageProducts' element={
+          <RequireAuth>
+            <ManageProducts />
+          </RequireAuth>
+        } />
         <Route path='/login' element={<Login />} />
         <Route path='/singup' element={<SingUp />} />
         <Route path='/resetpass' element={<ResetPassword />} />

@@ -16,7 +16,7 @@ const Header = () => {
         <div>
             <Navbar expand="lg" variant="dark" className='fixed-top' id='navbar-bg'>
                 <Container>
-                    <Navbar.Brand href="#">Super-Deal</Navbar.Brand>
+                    <Navbar.Brand href="/home">Super-Deal</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
@@ -25,18 +25,23 @@ const Header = () => {
                             navbarScroll
                         >   
                             <div className='nav-item'>
-                                <Link className='nav-link' to='/home'>HOME</Link>
+                                <Link className='nav-link' to='/home'>Home</Link>
                             </div>
                             <div className='nav-item'>
-                                <Link className='nav-link' to='/shop'>SHOP</Link>
-                            </div>
-                            <div className='nav-item'>
-                                {
-                                    user ? (<button className='btn btn-outline-danger' onClick={() => signOut(auth)}>Sing Out</button>) : 
-                                    (<Link className='nav-link text-light' to='/login'>LOGIN <IoIosContact className='text-light fs-3 pb-1' /></Link>)
-                                }
+                                <Link className='nav-link' to='/shop'>Shop</Link>
                             </div>
                             
+                                {
+                                    user && <>
+                                        <Link className='nav-link' to='/ManageProducts'>Manage Items</Link>
+                                        <Link className='nav-link' to='/AddProducts'>Add Item</Link>
+                                    <Link className='nav-link' to='/MyItems'>My Items</Link>
+                                    </>
+                                }
+                                {
+                                    user ? (<button className='btn btn-outline-danger' onClick={() => signOut(auth)}>Sing Out</button>) : 
+                                    (<Link className='nav-link text-light' to='/login'>Login <IoIosContact className='text-light fs-3 pb-1' /></Link>)
+                                }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
