@@ -3,4 +3,7 @@
     background-color: #2C394B;
     border-radius: 12px;
     color: whitesmoke;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.15);
 }

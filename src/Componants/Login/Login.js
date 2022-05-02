@@ -65,9 +65,9 @@ const Login = () => {
     };
 
     return (
-        <section className="vh-100">
-            <div className="container py-3 h-100">
-                <div className="row d-flex justify-content-center align-items-center h-100">
+        <section>
+            <div className="container my-5 h-100">
+                <div className="row d-flex justify-content-center h-100">
                     <div className="col-12 col-md-8 col-lg-6 col-xl-5">
                         <div id='form-bg' >
                             <div className="card-body px-5 py-3 text-center">
@@ -85,7 +85,7 @@ const Login = () => {
                                         {errors?.password && <p className='text-danger text-start my-2'>{errors.password}</p>}
                                     </div>
                                     <div className='my-4'>
-                                        <Link className='text-info' to='/restpass'>Forgot password?</Link>
+                                        <Link className='text-info' to='/resetpass'>Forgot password?</Link>
                                     </div>
                                     <div className="d-grid">
                                         <button className="btn btn-success p-2" type="submit"><FiLogIn className='fs-5'/> Login</button>

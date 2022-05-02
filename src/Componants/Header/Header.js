@@ -32,7 +32,8 @@ const Header = () => {
                             </div>
                             <div className='nav-item'>
                                 {
-                                    user ? (<button className='btn btn-outline-danger' onClick={() => signOut(auth)}>Sing Out</button>) : (<Link className='nav-link text-light' to='/login'>LOGIN <IoIosContact className='text-light fs-3 pb-1' /></Link>)
+                                    user ? (<button className='btn btn-outline-danger' onClick={() => signOut(auth)}>Sing Out</button>) : 
+                                    (<Link className='nav-link text-light' to='/login'>LOGIN <IoIosContact className='text-light fs-3 pb-1' /></Link>)
                                 }
                             </div>
                             

@@ -9,7 +9,7 @@ const Footer = () => {
         <div className='mt-5'>
             <footer class="text-center text-lg-start bg-light text-muted">
                 <section
-                    class="d-flex justify-content-center justify-content-lg-arround p-4 border-bottom"
+                    class="d-flex justify-content-center justify-content-md-arround p-4 border-bottom"
                 >
                     <div class="me-5 d-none d-lg-block">
                         <p>Get connected with us on social networks:</p>
