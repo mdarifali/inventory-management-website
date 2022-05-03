@@ -1,14 +1,31 @@
 import React from 'react';
+import { confirmAlert } from 'react-confirm-alert';
+import { ToastContainer, toast } from 'react-toastify';
 import './ManageProducts.css';
 import { TiDeleteOutline } from 'react-icons/ti';
 import useHook from '../useHook/useHook';
 
 const ManageProducts = () => {
+    const [products] = useHook();
 
-    const [products, setProducts] = useHook();
-
+    const submit = () => {
+        confirmAlert({
+            title: 'Confirm to submit',
+            message: 'Are you sure to do this.',
+            buttons: [
+                {
+                    label: 'Yes',
+                    onClick: () => alert('Click Yes')
+                },
+                {
+                    label: 'No',
+                    onClick: () => alert('Click No')
+                }
+            ]
+        });
+    }
     const handleDelete = id => {
-        const confirm = window.confirm('Do You Want To Delete');
+        const confirm = submit();
         if(confirm){
             const url = `https://boiling-fjord-43680.herokuapp.com/productapi/${id}`;
             fetch(url, {

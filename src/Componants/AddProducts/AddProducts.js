@@ -1,4 +1,5 @@
 import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { AiFillFileAdd } from 'react-icons/ai';
 import auth from '../../FirebaseAuth';
@@ -16,7 +17,7 @@ const AddProducts = () => {
         const img = data.target.img.value;
         const description = data.target.name.value;
         const allData = { name, price, stock, seller, img, description};
-        console.log(allData);
+        
         const url = `https://boiling-fjord-43680.herokuapp.com/productapi`;
         fetch(url, {
             method: 'POST',
@@ -27,15 +28,12 @@ const AddProducts = () => {
         })
         .then(res => res.json())
         .then(result => {
-            console.log(result);
+            console.log('Success', result);
+            toast.success("Data Insert Successfully", {
+                position: toast.POSITION.TOP_CENTER
+            });
+            data.target.reset();
         });
-
-        if(allData){
-            return alert('Data Inserted Success');
-        }
-        else{
-            return alert('Please Enter Valid Data');
-        }
 
     }
     
@@ -86,6 +84,7 @@ const AddProducts = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer autoClose={7000}/>
         </section>
     );
 };

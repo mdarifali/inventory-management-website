@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-toastify/dist/ReactToastify.css';
 import { Route, Routes } from 'react-router-dom';
 import Footer from './Componants/Footer/Footer';
 import Header from './Componants/Header/Header';
@@ -10,6 +11,7 @@ import Shop from './Componants/Shop/Shop';
 import SingUp from './Componants/SingUp/SingUp';
 import AddProducts from './Componants/AddProducts/AddProducts';
 import ManageProducts from './Componants/ManageProducts/ManageProducts';
+import ProductDetails from './Componants/ProductDetails/ProductDetails';
 
 
 function App() {
@@ -23,6 +25,11 @@ function App() {
         <Route path='/shop' element={
           <RequireAuth>
             <Shop />
+          </RequireAuth>
+        } />
+        <Route path='ProductDetails/:id' element={
+          <RequireAuth>
+            <ProductDetails />
           </RequireAuth>
         } />
         <Route path='/AddProducts' element={
