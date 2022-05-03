@@ -4,14 +4,16 @@ import { FiLogIn } from 'react-icons/fi';
 import auth from '../../FirebaseAuth';
 import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 
 
 const ResetPassword = () => {
 
     const [email, setEmail] = useState('');
     const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(auth)
-    toast(error);
+    toast.error(error, {
+        position: toast.POSITION.TOP_CENTER
+    });
 
     return (
         <section className="vh-100">
@@ -34,17 +36,7 @@ const ResetPassword = () => {
                                 <div className='nav-item fw-bold mb-0'>
                                     <Link className="nav-link" to='/login'><span className='text-info'>Already have an account?</span><span className='text-danger'> Login Hear</span></Link>
                                 </div>
-                                <ToastContainer
-                                    position="top-right"
-                                    autoClose={5000}
-                                    hideProgressBar={false}
-                                    newestOnTop={false}
-                                    closeOnClick
-                                    rtl={false}
-                                    pauseOnFocusLoss
-                                    draggable
-                                    pauseOnHover
-                                />
+                                <ToastContainer />
                             </div>
                         </div>
                     </div>

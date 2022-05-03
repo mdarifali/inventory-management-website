@@ -7,7 +7,7 @@ import Home from './Componants/Home/HomePage';
 import Login from './Componants/Login/Login';
 import RequireAuth from './Componants/RequireAuth/RequireAuth';
 import ResetPassword from './Componants/ResePasswod/ResetPassword';
-import Shop from './Componants/Shop/Shop';
+import Inventory from './Componants/Inventory/Inventory';
 import SingUp from './Componants/SingUp/SingUp';
 import AddProducts from './Componants/AddProducts/AddProducts';
 import ManageProducts from './Componants/ManageProducts/ManageProducts';
@@ -22,9 +22,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
-        <Route path='/shop' element={
+        <Route path='/inventory' element={
           <RequireAuth>
-            <Shop />
+            <Inventory />
           </RequireAuth>
         } />
         <Route path='ProductDetails/:id' element={

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Shop from '../Shop/Shop';
+import Shop from '../Inventory/Inventory';
 import Carousel from './Carousel';
 
 const Home = () => {

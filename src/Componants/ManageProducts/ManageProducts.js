@@ -1,5 +1,4 @@
 import React from 'react';
-import { confirmAlert } from 'react-confirm-alert';
 import { ToastContainer, toast } from 'react-toastify';
 import './ManageProducts.css';
 import { TiDeleteOutline } from 'react-icons/ti';
@@ -8,24 +7,8 @@ import useHook from '../useHook/useHook';
 const ManageProducts = () => {
     const [products] = useHook();
 
-    const submit = () => {
-        confirmAlert({
-            title: 'Confirm to submit',
-            message: 'Are you sure to do this.',
-            buttons: [
-                {
-                    label: 'Yes',
-                    onClick: () => alert('Click Yes')
-                },
-                {
-                    label: 'No',
-                    onClick: () => alert('Click No')
-                }
-            ]
-        });
-    }
     const handleDelete = id => {
-        const confirm = submit();
+        const confirm = window.confirm('Do you want to Delete');
         if(confirm){
             const url = `https://boiling-fjord-43680.herokuapp.com/productapi/${id}`;
             fetch(url, {
@@ -33,7 +16,10 @@ const ManageProducts = () => {
             })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                
+                toast.success("Data Delete Successfully", {
+                    position: toast.POSITION.TOP_CENTER
+                });
             })
         }
 
@@ -60,9 +46,11 @@ const ManageProducts = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>)
+                            </div>
+                        )
                     }
                 </div>
+                <ToastContainer autoClose={5000} />
             </section>
         </div>
     );

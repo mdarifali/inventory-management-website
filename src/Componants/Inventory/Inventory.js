@@ -2,7 +2,7 @@ import useHook from '../useHook/useHook';
 import Product from './Product';
 
 
-const Shop = () => {
+const Inventory = () => {
 
     const [products] = useHook();
 
@@ -21,4 +21,4 @@ const Shop = () => {
     );
 };
 
-export default Shop;
+export default Inventory;

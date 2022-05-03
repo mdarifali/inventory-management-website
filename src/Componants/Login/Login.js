@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from '../../FirebaseAuth';
 import GoogleAuth from '../SocialLogin/GoogleAuth';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Login = () => {
 
@@ -42,6 +43,7 @@ const Login = () => {
         else{
             setErrors({...errors, email: 'Please Enter Valid Email!'});
             setUserInfo({ ...userInfo, email: '' });
+
         }
     };
 
@@ -90,13 +92,13 @@ const Login = () => {
                                     <div className="d-grid">
                                         <button className="btn btn-success p-2" type="submit"><FiLogIn className='fs-5'/> Login</button>
                                     </div>
-                                    {/* {hookerror && <p className='text-danger text-center my-4'>{hookerror}</p>} */}
+                                    {hookerror?.email && hookerror?.password}
                                 </form>
                                 <GoogleAuth />
                                 <div className='pt-3'>
                                     <Link className="nav-link text-info" to='/singup'>Don't have an account? <span className='text-warning fs-6 fw-bold'>Sign Up Now</span></Link>
                                 </div>
-
+                                <ToastContainer />
                             </div>
                         </div>
                     </div>

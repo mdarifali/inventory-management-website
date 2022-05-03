@@ -28,7 +28,7 @@ const Header = () => {
                                 <Link className='nav-link' to='/home'>Home</Link>
                             </div>
                             <div className='nav-item'>
-                                <Link className='nav-link' to='/shop'>Shop</Link>
+                                <Link className='nav-link' to='/inventory'>Inventory</Link>
                             </div>
                             
                                 {
