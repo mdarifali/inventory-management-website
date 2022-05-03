@@ -22,13 +22,15 @@ const ProductDetails = () => {
                 </div>
                 <div className="col-md-6">
                     <div className="card-body">
-                        <h2 class="card-title">{product.name}</h2>
+                        <h3 class="card-title">{product.name}</h3>
+                        <h4>Product Id: {product._id}</h4>
                         <h5>Price: <span className='fw-bold'>${product.price}</span></h5>
                         <p className='m-0'>Brand: {product.seller}</p>
-                        <p>Stock: {product.stock}</p>
+                        <p className='m-0'>Stock: {product.stock}</p>
+                        <p className='m-0'>Quantity: {product.quantity}</p>
                         <h3>Description: </h3><p>{product.description}</p>
                         <button className='btn btn-danger d-flex justify-content-center align-items-center p-3'>
-                            Deliver Now
+                            Deliverd
                         </button>
                     </div>
                 </div>

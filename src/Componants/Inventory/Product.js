@@ -17,7 +17,7 @@ const Product = ({ product }) => {
                     <p>Stock: {stock}</p>
                 </div>
                 <Link to={`/ProductDetails/${product._id}`} className='btn btn-outline-success d-flex justify-content-center align-items-center p-3'>
-                    Update Product <MdOutlineSystemUpdateAlt className='ms-2 fs-4'/>
+                    Stock Update <MdOutlineSystemUpdateAlt className='ms-2 fs-4'/>
                 </Link>
             </div>
         </div>
