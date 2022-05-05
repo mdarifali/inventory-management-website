@@ -14,10 +14,12 @@ const ProductDetails = () => {
             .then(data => setProduct(data))
     }, [id]);
 
+    // handleDeliverd function //
     const handleDeliverd = () => {
-        const quantity = product.quantity;
-        const newQuantity = quantity - 1;
-        
+        const quantity = parseFloat(product.quantity);
+        const newQuantity = parseFloat(quantity - 1);
+        const updateQuan = { quantity: newQuantity };
+        // console.log(updateQuan);
        
         const url = `https://boiling-fjord-43680.herokuapp.com/productapi/${id}`;
         fetch(url, {
@@ -25,12 +27,12 @@ const ProductDetails = () => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(newQuantity)
+            body: JSON.stringify(updateQuan)
         })
             .then(res => res.json())
             .then(result => {
                 console.log('Success', result);
-                toast.success("Data Insert Successfully", {
+                toast.success("Item Deliverd Successfully", {
                     position: toast.POSITION.TOP_CENTER
                 });
 
@@ -38,6 +40,7 @@ const ProductDetails = () => {
 
     }
 
+    // handleStockInce function //
     const handleStockInce = (e) => {
         e.preventDefault();
         const quantity = parseFloat(e.target.quantity.value);
@@ -47,7 +50,7 @@ const ProductDetails = () => {
         }
         const newQuantity = parseFloat(quantity + perviousQuantity);
         const updateQuan = { quantity: newQuantity};
-        console.log(e, updateQuan);
+        // console.log(e, updateQuan);
 
         const url = `https://boiling-fjord-43680.herokuapp.com/productapi/${id}`;
         fetch(url, {
@@ -61,13 +64,11 @@ const ProductDetails = () => {
             .then(res => res.json())
             .then(result => {
                 console.log('Success', result);
-                toast.success("Data Insert Successfully", {
+                toast.success("New Quantity added Successfully", {
                     position: toast.POSITION.TOP_CENTER
                 });
                 e.target.reset();
             });
-        
-
     }
 
     return (
@@ -87,12 +88,12 @@ const ProductDetails = () => {
                         <button onClick={handleDeliverd} className='btn btn-danger d-flex justify-content-center align-items-center p-3'>
                             Deliverd Now
                         </button>
+                        <form onSubmit={handleStockInce} className='mt-4'>
+                            <input className='form-control w-25 mb-3' type="number" name="quantity" id="" />
+                            <button className='btn btn-success' type="submit">Quantity Increase</button>
+                        </form>
                         <ToastContainer />
                     </div>
-                    <form onSubmit = {handleStockInce} className='mt-4'>
-                        <input className='form-control w-25 mb-2' type="number" name="quantity" id="" />
-                        <button className='btn btn-success' type="submit">Stock Increase</button>
-                    </form>
                 </div>
             </div>
         </div>
