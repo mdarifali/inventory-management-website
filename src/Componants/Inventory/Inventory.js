@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import useHook from '../useHook/useHook';
 import Product from './Product';
 
@@ -20,8 +21,9 @@ const Inventory = () => {
                                     <h4 class="card-title">{product.name}</h4>
                                     <p>Description: <span>{product.description}</span></p>
                                     <h5>Price: <span className='fw-bold'>${product.price}</span></h5>
-                                    <p className='m-0'>Brand: {product.seller}</p>
-                                    <p>Stock: {product.stock}</p>
+                                    <p className='m-0'>Seller: {product.seller}</p>
+                                    <p>Quantity: {product.quantity}</p>
+                                    {product.email ? <p>Email:{product.email}</p> : <span className='text-danger'>Email: Not found</span>}
                                 </div>
                                 {/* <Link to={`/ProductDetails/${product._id}`} className='btn btn-outline-success d-flex justify-content-center align-items-center p-3'>
                                 Stock Update <MdOutlineSystemUpdateAlt className='ms-2 fs-4' />

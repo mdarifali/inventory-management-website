@@ -1,30 +1,17 @@
-#card-items {
-    color: rgb(255, 255, 255);
-    height: 100%;
-    border-radius: 10px;
-    background-color: #2C394B;
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.09);
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.09);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.09);
-}
 
 #product-img {
     width: 100px;
     height: 100px;
-    border-radius: 50%;
 }
 
-.delet-btn {
-    background-color: transparent;
-    border: none;
-}
-
-.delet-icon {
-    font-size: 55px;
-    color: rgb(255, 255, 255);
+.delete-icon {
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.841);
     transition: ease 0.50s;
 }
 
-.delet-icon:hover {
-    color: rgba(240, 31, 31, 0.841);
+.delete-icon:hover {
+    color: rgba(255, 0, 0, 0.841);
+    font-size: 35px;
 }
+

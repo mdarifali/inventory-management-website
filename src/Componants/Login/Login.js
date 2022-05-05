@@ -83,7 +83,7 @@ const Login = () => {
                                     </div>
 
                                     <div className="form-outline form-dark mb-4">
-                                        <input type="password" className="form-control form-control-lg" placeholder='Password' onChange={handelPasswordChange} />
+                                        <input type="password" className="form-control form-control-lg" placeholder='Password' onChange={handelPasswordChange} required/>
                                         {errors?.password && <p className='text-danger text-start my-2'>{errors.password}</p>}
                                     </div>
                                     <div className='my-4'>

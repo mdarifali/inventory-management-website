@@ -1,5 +1,5 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { auth } from '../../FirebaseAuth';
 import { FaFacebookSquare } from 'react-icons/fa';
 import { AiOutlineGoogle } from 'react-icons/ai';
@@ -10,8 +10,18 @@ const GoogleAuth = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
 
     const navigate = useNavigate();
+    const location = useLocation();
+    const form = location.state?.pathname || '/';
     let errorElement;
     let spinner;
+
+    useEffect(() => {
+
+        if (user) {
+            navigate(form);
+        }
+
+    }, [user])
 
     if (error) {
         errorElement = (
@@ -26,9 +36,6 @@ const GoogleAuth = () => {
         spinner = (<p>Loading...</p>);
     }
 
-    if (user) {
-        return navigate('/shop');
-    }
     return (
         <div className='mt-2'>
             {errorElement}

@@ -10,13 +10,14 @@ const AddProducts = () => {
 
     const handleAddProduct = data => {
         data.preventDefault();
+        const email = data.target.email.value;
         const name = data.target.name.value;
         const price = data.target.price.value;
-        const stock = data.target.stock.value;
+        const quantity = data.target.quantity.value;
         const seller = data.target.seller.value;
         const img = data.target.img.value;
         const description = data.target.name.value;
-        const allData = { name, price, stock, seller, img, description};
+        const allData = { email, name, price, quantity, seller, img, description};
         
         const url = `https://boiling-fjord-43680.herokuapp.com/productapi`;
         fetch(url, {
@@ -48,7 +49,7 @@ const AddProducts = () => {
                                     <h2 className="fw-bold mb-4 text-uppercase">Enter Products Details</h2>
 
                                     <div className="form-outline form-dark mb-4">
-                                        <input type="email" className="form-control form-control-lg" placeholder='Email' required value={user?.email}/>
+                                        <input type="email" className="form-control form-control-lg" name='email' value={user?.email}/>
                                     </div>
 
                                     <div className="form-outline form-dark mb-4">
@@ -60,7 +61,7 @@ const AddProducts = () => {
                                     </div>
 
                                     <div className="form-outline form-dark mb-4">
-                                        <input type="number" className="form-control form-control-lg" name='stock' placeholder='Product Stock' required />
+                                        <input type="number" className="form-control form-control-lg" name='quantity' placeholder='Product Quantity' required />
                                     </div>
 
                                     <div className="form-outline form-dark mb-4">
