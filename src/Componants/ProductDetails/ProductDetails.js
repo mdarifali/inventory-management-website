@@ -6,7 +6,7 @@ const ProductDetails = () => {
 
     const { id } = useParams();
     const [product, setProduct] = useState({});
-
+    
     useEffect(() => {
         const url = `https://boiling-fjord-43680.herokuapp.com/productapi/${id}`;
         fetch(url)
@@ -15,9 +15,9 @@ const ProductDetails = () => {
     }, [id]);
 
     const handleDeliverd = () => {
-        const quantity = parseInt(product.quantity);
-        let newQuantity = parseInt(quantity - 1);
-        console.log(newQuantity);
+        const quantity = product.quantity;
+        const newQuantity = quantity - 1;
+        
        
         const url = `https://boiling-fjord-43680.herokuapp.com/productapi/${id}`;
         fetch(url, {
@@ -40,10 +40,14 @@ const ProductDetails = () => {
 
     const handleStockInce = (e) => {
         e.preventDefault();
-        const quantity = parseInt(e.target.quantity.value);
-        const newQuantity = parseInt(quantity + product.quantity);
-        const updateQuan = { newQuantity};
-        console.log(e, product.quantity);
+        const quantity = parseFloat(e.target.quantity.value);
+        let perviousQuantity = product.quantity;
+        if (perviousQuantity === null) {
+            perviousQuantity = 0;
+        }
+        const newQuantity = parseFloat(quantity + perviousQuantity);
+        const updateQuan = { quantity: newQuantity};
+        console.log(e, updateQuan);
 
         const url = `https://boiling-fjord-43680.herokuapp.com/productapi/${id}`;
         fetch(url, {
