@@ -6,6 +6,7 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from '../../FirebaseAuth';
 import GoogleAuth from '../SocialLogin/GoogleAuth';
 import { ToastContainer, toast } from 'react-toastify';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const Login = () => {
 
@@ -20,6 +21,7 @@ const Login = () => {
     });
 
     const [ signInWithEmailAndPassword, user, loading, hookerror] = useSignInWithEmailAndPassword (auth);
+    let spinner;
     const navigate = useNavigate();
     const location = useLocation();
     const form = location.state?.pathname || '/';
@@ -61,13 +63,26 @@ const Login = () => {
         }
     };
 
+    if (loading) {
+
+        spinner = (<LoadingSpinner />);
+    }
+
+    if (hookerror) {
+        toast.error(hookerror.message, {
+            position: toast.POSITION.TOP_CENTER
+        });
+    }
+
     const handleLogin = (e) => {
         e.preventDefault();
         signInWithEmailAndPassword(userInfo.email, userInfo.password);
+  
     };
 
     return (
         <section>
+            {spinner}
             <div className="container my-5 h-100">
                 <div className="row d-flex justify-content-center h-100">
                     <div className="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -92,7 +107,6 @@ const Login = () => {
                                     <div className="d-grid">
                                         <button className="btn btn-success p-2" type="submit"><FiLogIn className='fs-5'/> Login</button>
                                     </div>
-                                    {hookerror?.email && hookerror?.password}
                                 </form>
                                 <GoogleAuth />
                                 <div className='pt-3'>

@@ -12,14 +12,17 @@ const ProductDetails = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
-    }, [id]);
+    }, [id, product.quantity]);
 
     // handleDeliverd function //
     const handleDeliverd = () => {
         const quantity = parseFloat(product.quantity);
+        if (quantity >= 0) {
+            return alert('Sock Out! add new quantity');
+        }
         const newQuantity = parseFloat(quantity - 1);
+        
         const updateQuan = { quantity: newQuantity };
-        // console.log(updateQuan);
        
         const url = `https://boiling-fjord-43680.herokuapp.com/productapi/${id}`;
         fetch(url, {
@@ -44,6 +47,9 @@ const ProductDetails = () => {
     const handleStockInce = (e) => {
         e.preventDefault();
         const quantity = parseFloat(e.target.quantity.value);
+        if (quantity <= 0) {
+            return alert('Please Enter positive Value');
+        }
         let perviousQuantity = product.quantity;
         if (perviousQuantity === null) {
             perviousQuantity = 0;
@@ -73,7 +79,7 @@ const ProductDetails = () => {
 
     return (
         <div className='container my-5'>
-            <div className="row g-4">
+            <div className="row g-4 border border-warning border-2 p-4">
                 <div className="col-md-6 shadow-lg rounded-3">
                     <img className="img-fluid w-100" src={product.img} alt="" />
                 </div>

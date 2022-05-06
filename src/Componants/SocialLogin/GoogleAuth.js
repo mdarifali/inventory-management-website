@@ -5,14 +5,15 @@ import { FaFacebookSquare } from 'react-icons/fa';
 import { AiOutlineGoogle } from 'react-icons/ai';
 import { AiOutlineGithub } from 'react-icons/ai';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { ToastContainer, toast } from 'react-toastify';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
+
 
 const GoogleAuth = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-
     const navigate = useNavigate();
     const location = useLocation();
     const form = location.state?.pathname || '/';
-    let errorElement;
     let spinner;
 
     useEffect(() => {
@@ -24,22 +25,20 @@ const GoogleAuth = () => {
     }, [user])
 
     if (error) {
-        errorElement = (
-            <div>
-                <p className='text-danger'>Error: {error?.message}</p>
-            </div>
-        );
+        toast.error(error.message, {
+            position: toast.POSITION.TOP_CENTER
+        });
     }
 
     if (loading) {
 
-        spinner = (<p>Loading...</p>);
+        spinner = (<LoadingSpinner />);
     }
 
     return (
         <div className='mt-2'>
-            {errorElement}
             {spinner}
+            <ToastContainer />
             <div className="d-grid gap-2">
                 <button
                     onClick={() => signInWithGoogle()}
@@ -49,7 +48,6 @@ const GoogleAuth = () => {
                 <button className="btn btn-primary"><FaFacebookSquare className='fs-4' /></button>
 
             </div>
-
         </div>
     );
 };
