@@ -7,39 +7,39 @@ import { FaGem } from 'react-icons/fa';
 const Footer = () => {
     return (
         <div className='mt-5'>
-            <footer class="text-center text-lg-start bg-light text-muted">
+            <footer className="text-center text-lg-start bg-light text-muted">
                 <section
-                    class="d-flex justify-content-center justify-content-md-arround p-4 border-bottom"
+                    className="d-flex justify-content-center justify-content-md-arround p-4 border-bottom"
                 >
-                    <div class="me-5 d-none d-lg-block">
+                    <div className="me-5 d-none d-lg-block">
                         <p>Get connected with us on social networks:</p>
                     </div>
                     <div>
-                        <a href="#/" class="me-4 text-reset">
+                        <a href="#/" className="me-4 text-reset">
                             <MdOutlineFacebook className='fs-4'/>
                         </a>
-                        <a href="#/" class="me-4 text-reset">
+                        <a href="#/" className="me-4 text-reset">
                             <AiFillTwitterCircle className='fs-4'/>
                         </a>
-                        <a href="#/" class="me-4 text-reset">
+                        <a href="#/" className="me-4 text-reset">
                             <AiFillGoogleCircle className='fs-4'/>
                         </a>
-                        <a href="#/" class="me-4 text-reset">
+                        <a href="#/" className="me-4 text-reset">
                             <AiFillInstagram className='fs-4'/>
                         </a>
-                        <a href="#/" class="me-4 text-reset">
+                        <a href="#/" className="me-4 text-reset">
                             <AiFillLinkedin className='fs-4'/>
                         </a>
-                        <a href="#/" class="me-4 text-reset">
+                        <a href="#/" className="me-4 text-reset">
                             <AiFillGithub className='fs-4'/>
                         </a>
                     </div>
                 </section>
-                <section class="">
-                    <div class="container text-center text-md-start mt-5">
-                        <div class="row mt-3">
-                            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                                <h6 class="text-uppercase fw-bold mb-4">
+                <section className="">
+                    <div className="container text-center text-md-start mt-5">
+                        <div className="row mt-3">
+                            <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                                <h6 className="text-uppercase fw-bold mb-4">
                                     <FaGem className='fs-5'/> Company name
                                 </h6>
                                 <p>
@@ -48,44 +48,44 @@ const Footer = () => {
                                 </p>
                             </div>
 
-                            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                                <h6 class="text-uppercase fw-bold mb-4">
+                            <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                                <h6 className="text-uppercase fw-bold mb-4">
                                     Products
                                 </h6>
                                 <p>
-                                    <a href="#!" class="text-reset">Jsvascript</a>
+                                    <a href="#!" className="text-reset">Jsvascript</a>
                                 </p>
                                 <p>
-                                    <a href="#!" class="text-reset">React</a>
+                                    <a href="#!" className="text-reset">React</a>
                                 </p>
                                 <p>
-                                    <a href="#!" class="text-reset">Vanila CSS</a>
+                                    <a href="#!" className="text-reset">Vanila CSS</a>
                                 </p>
                                 <p>
-                                    <a href="#!" class="text-reset">Bootsrap</a>
+                                    <a href="#!" className="text-reset">Bootsrap</a>
                                 </p>
                             </div>
 
-                            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                                <h6 class="text-uppercase fw-bold mb-4">
+                            <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                                <h6 className="text-uppercase fw-bold mb-4">
                                     Useful links
                                 </h6>
                                 <p>
-                                    <a href="#!" class="text-reset">Pricing</a>
+                                    <a href="#!" className="text-reset">Pricing</a>
                                 </p>
                                 <p>
-                                    <a href="#!" class="text-reset">Settings</a>
+                                    <a href="#!" className="text-reset">Settings</a>
                                 </p>
                                 <p>
-                                    <a href="#!" class="text-reset">Orders</a>
+                                    <a href="#!" className="text-reset">Orders</a>
                                 </p>
                                 <p>
-                                    <a href="#!" class="text-reset">Help</a>
+                                    <a href="#!" className="text-reset">Help</a>
                                 </p>
                             </div>
                             
-                            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                                <h6 class="text-uppercase fw-bold mb-4">
+                            <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                                <h6 className="text-uppercase fw-bold mb-4">
                                     Contact
                                 </h6>
                                 <p><AiFillHome className='fs-5'/> New York, NY 10012, US</p>
@@ -99,7 +99,7 @@ const Footer = () => {
                     </div>
                 </section>
                 
-                <div class="text-center p-4" id='footer-bottom-bg'>
+                <div className="text-center p-4" id='footer-bottom-bg'>
                     © 2022 Copyright: Arif Ali
                 </div>
                

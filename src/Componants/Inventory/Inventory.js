@@ -18,7 +18,7 @@ const Inventory = () => {
                             <div className="card h-100 shadow-lg">
                                 <img className="card-img-top" src={product.img} alt="" />
                                 <div className="card-body">
-                                    <h4 class="card-title">{product.name}</h4>
+                                    <h4 className="card-title">{product.name}</h4>
                                     <h5>Description: </h5><p>{product.description}</p>
                                     <h5>Price: <span className='fw-bold'>${product.price}</span></h5>
                                     <p className='m-0'>Seller: {product.seller}</p>

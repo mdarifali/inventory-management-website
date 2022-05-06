@@ -11,11 +11,11 @@ const Home = () => {
     return (
         <div>
             <section className='container-fluid p-0'>
-                <div class="card position-relative">
+                <div className="card position-relative">
                     <img id='banner-img' className='img-fluid w-100' src={HeaderImg} alt="" />
-                    <div class="card-img-overlay ">
+                    <div className="card-img-overlay ">
                         <div className='position-absolute top-50 start-50 translate-middle text-center'>
-                            <h1 class="header-title">Welcome to our Inventory Management Website</h1>
+                            <h1 className="header-title">Welcome to our Inventory Management Website</h1>
                         </div>
                     </div>
                 </div>
@@ -33,11 +33,11 @@ const Home = () => {
                 </div>
             </section>
             <section className='container my-5'>
-                <div class="card text-secondary position-relative">
-                    <img id='banner-img' src={ManageImg} class="card-img" alt="." />
-                    <div class="card-img-overlay ">
+                <div className="card text-secondary position-relative">
+                    <img id='banner-img' src={ManageImg} className="card-img" alt="." />
+                    <div className="card-img-overlay ">
                         <div className='position-absolute top-50 start-50 translate-middle text-center'>
-                            <h1 class="card-title py-2">Manage your all products items</h1>
+                            <h1 className="card-title py-2">Manage your all products items</h1>
                             <Link to='/ManageProducts'><button className='btn btn-success btn-lg'>Manage Inventory Products</button></Link>
                         </div>
                     </div>

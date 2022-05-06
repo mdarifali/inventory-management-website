@@ -11,9 +11,17 @@ const ResetPassword = () => {
 
     const [email, setEmail] = useState('');
     const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(auth)
-    toast.error(error, {
-        position: toast.POSITION.TOP_CENTER
-    });
+
+    if (error) {
+        toast.error(error.message, {
+            position: toast.POSITION.TOP_CENTER
+        });
+    }
+    if (sending) {
+        toast.success(sending.message, {
+            position: toast.POSITION.TOP_CENTER
+        });
+    }
 
     return (
         <section className="vh-100">
