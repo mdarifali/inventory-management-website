@@ -6,13 +6,16 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCnV5jUz5NkvoD_5e4IMkmn9sKXRZboKac",
-    authDomain: "online-fitness-trainer.firebaseapp.com",
-    projectId: "online-fitness-trainer",
-    storageBucket: "online-fitness-trainer.appspot.com",
-    messagingSenderId: "138390532750",
-    appId: "1:138390532750:web:11253ecac603b7cecc8fdf"
+
+    apiKey: "AIzaSyA5nM1ov0IhbVo4Ofg_RWzuByf11dikxR4",
+    authDomain: "inventory-management-8de03.firebaseapp.com",
+    projectId: "inventory-management-8de03",
+    storageBucket: "inventory-management-8de03.appspot.com",
+    messagingSenderId: "673246382558",
+    appId: "1:673246382558:web:5475735cf6f6aaf85db54f"
+
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
