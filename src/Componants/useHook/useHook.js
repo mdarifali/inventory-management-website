@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const useHook = () => {
     const [products, setProducts] = useState([]);
@@ -12,7 +11,8 @@ const useHook = () => {
         
     }, [products]);
 
-    return [products, setProducts];
+    return (
+        [products, setProducts]);
 };
 
 export default useHook;

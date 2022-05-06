@@ -4,10 +4,13 @@ import useHook from '../useHook/useHook';
 import HeaderImg from '../Images/top-header.img.jpg';
 import ManageImg from '../Images/banner-img.jpg'
 import { Link } from 'react-router-dom';
+import Sponsor from './Sponsor';
+import ContactUs from './ContactUs';
 
 
 const Home = () => {
     const [products] = useHook();
+    
     return (
         <div>
             <section className='container-fluid p-0'>
@@ -43,6 +46,8 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+            <Sponsor />
+            <ContactUs />
         </div>
     );
 };

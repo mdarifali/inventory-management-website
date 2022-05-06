@@ -6,21 +6,14 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-
-    apiKey: "AIzaSyBi0_wff4Yiq_k__d92lEc1aX1clSJ9itI",
-
-    authDomain: "inventory-management-d1499.firebaseapp.com",
-
-    projectId: "inventory-management-d1499",
-
-    storageBucket: "inventory-management-d1499.appspot.com",
-
-    messagingSenderId: "746091816566",
-
-    appId: "1:746091816566:web:1fde85747bd77074a6e157"
+    apiKey: "AIzaSyD-g3OC2NjHwMZLePJw3KZDm2v5V7dkhsA",
+    authDomain: "inventory-management-web-d2fba.firebaseapp.com",
+    projectId: "inventory-management-web-d2fba",
+    storageBucket: "inventory-management-web-d2fba.appspot.com",
+    messagingSenderId: "357877151357",
+    appId: "1:357877151357:web:ed42e779561dd35925e314"
 
 };
-
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
