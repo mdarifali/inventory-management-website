@@ -13,6 +13,7 @@ import AddProducts from './Componants/AddProducts/AddProducts';
 import ManageProducts from './Componants/ManageProducts/ManageProducts';
 import ProductDetails from './Componants/ProductDetails/ProductDetails';
 import Blogs from './Componants/Blogs/Blogs';
+import MyItem from './Componants/MyItem/MyItem';
 
 
 function App() {
@@ -42,6 +43,11 @@ function App() {
         <Route path='/ManageProducts' element={
           <RequireAuth>
             <ManageProducts />
+          </RequireAuth>
+        } />
+        <Route path='/MyItem' element={
+          <RequireAuth>
+            <MyItem />
           </RequireAuth>
         } />
         <Route path='/login' element={<Login />} />

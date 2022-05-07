@@ -5,14 +5,14 @@ import { useParams } from 'react-router-dom';
 const ProductDetails = () => {
 
     const { id } = useParams();
-    const [product, setProduct] = useState({});
-   
+    const [product, setProduct] = useState([]);
+    const {quantity}  = product;
     useEffect(() => {
         const url = `https://boiling-fjord-43680.herokuapp.com/productapi/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
-    }, [id, product.quantity]);
+    }, [id, quantity]);
 
     // handleDeliverd function //
     const handleDeliverd = () => {
@@ -21,7 +21,6 @@ const ProductDetails = () => {
             return alert('Sock Out! add new quantity');
         }
         const newQuantity = parseFloat(quantity - 1);
-        
         const updateQuan = { quantity: newQuantity };
        
         const url = `https://boiling-fjord-43680.herokuapp.com/productapi/${id}`;
@@ -56,7 +55,6 @@ const ProductDetails = () => {
         }
         const newQuantity = parseFloat(quantity + perviousQuantity);
         const updateQuan = { quantity: newQuantity};
-        // console.log(e, updateQuan);
 
         const url = `https://boiling-fjord-43680.herokuapp.com/productapi/${id}`;
         fetch(url, {
@@ -85,7 +83,7 @@ const ProductDetails = () => {
                 </div>
                 <div className="col-md-6">
                     <div className="card-body">
-                        <h3 class="card-title">{product.name}</h3>
+                        <h3 className="card-title">{product.name}</h3>
                         <h4>Product Id: {product._id}</h4>
                         <h5>Price: <span className='fw-bold'>${product.price}</span></h5>
                         <p className='m-0'>Seller: {product.seller}</p>

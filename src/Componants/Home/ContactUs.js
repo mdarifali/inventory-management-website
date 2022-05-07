@@ -31,9 +31,9 @@ const ContactUs = () => {
                         <input type="text" name="name" className="form-control input-field" id="name" placeholder="Your Name" required />
                     </div>
                     <div className="form-group col-md-6">
-                        <input type="email" name="email" className="form-control form-group col-md-6 mt-3 mt-md-0" id="name" placeholder="Your Email" required />
+                        <input type="email" name="email" className="form-control form-group col-md-6 m-3 mt-md-0" id="name" placeholder="Your Email" required />
                     </div>
-                    <div className="form-group mt-3">
+                    <div className="form-group my-4">
                         <input type="text" className="form-control" name="subject" id="subject" placeholder="Subject" required />
                     </div>
                     <div className="form-group mt-3">
