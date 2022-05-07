@@ -5,6 +5,7 @@ import { IoIosContact } from 'react-icons/io';
 import auth from '../../FirebaseAuth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
+import logo from '../Images/icon.png'
 
 
 const Header = () => {
@@ -16,7 +17,9 @@ const Header = () => {
         <div>
             <Navbar expand="lg" variant="dark" className='fixed-top' id='navbar-bg'>
                 <Container>
-                    <Navbar.Brand href="/home">Super-Deal</Navbar.Brand>
+                    <Navbar.Brand href="/home">
+                        <img src={logo} alt="" /> Super-Deal
+                    </Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav

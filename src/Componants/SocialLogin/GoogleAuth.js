@@ -19,6 +19,21 @@ const GoogleAuth = () => {
     useEffect(() => {
 
         if (user) {
+            console.log(user);
+            const url = `https://boiling-fjord-43680.herokuapp.com/login`;
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                     email: user.email
+                })
+            })
+                .then(res => res.json())
+                .then(result => {
+                    console.log('Success', result);
+                })
             navigate(form);
         }
 

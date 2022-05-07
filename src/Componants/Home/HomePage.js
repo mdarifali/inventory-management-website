@@ -24,9 +24,11 @@ const Home = () => {
                 </div>
             </section>
             
-            <section className='container'>
+            <section className='container my-4'>
                 <div className="row g-5">
-                    <h1 className='text-center'>Total Product: {products.length}</h1>
+                    <div className="section-header">
+                        <h1 className="text-center">INVENTORY ITEMS</h1>
+                    </div>
                     {
                         products.slice(0, 6).map(product => <Product
                             key={product._id}

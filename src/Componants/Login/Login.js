@@ -8,6 +8,7 @@ import GoogleAuth from '../SocialLogin/GoogleAuth';
 import { ToastContainer, toast } from 'react-toastify';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
+
 const Login = () => {
 
     const [userInfo, setUserInfo] = useState ({
@@ -29,6 +30,21 @@ const Login = () => {
     useEffect(() => {
 
         if (user) {
+            const url = `https://boiling-fjord-43680.herokuapp.com/login/`;
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: userInfo.email
+                })
+            })
+                .then(res => res.json())
+                .then(result => {
+                    console.log('Success', result);
+            })
+
             navigate(form);
         }
         
@@ -74,10 +90,11 @@ const Login = () => {
         });
     }
 
-    const handleLogin = (e) => {
+    const handleLogin = e => {
         e.preventDefault();
         signInWithEmailAndPassword(userInfo.email, userInfo.password);
-  
+        console.log(userInfo.email);
+        
     };
 
     return (
