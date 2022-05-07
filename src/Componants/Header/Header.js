@@ -30,10 +30,7 @@ const Header = () => {
                             <div className='nav-item'>
                                 <Link className='nav-link' to='/blogs'>Blogs</Link>
                             </div>
-                            <div className='nav-item'>
-                                <Link className='nav-link' to='/inventory'>Inventory</Link>
-                            </div>
-                            
+            
                                 {
                                     user && <>
                                         <Link className='nav-link' to='/ManageProducts'>Manage Items</Link>

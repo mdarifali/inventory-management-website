@@ -7,7 +7,6 @@ import Home from './Componants/Home/HomePage';
 import Login from './Componants/Login/Login';
 import RequireAuth from './Componants/RequireAuth/RequireAuth';
 import ResetPassword from './Componants/ResePasswod/ResetPassword';
-import Inventory from './Componants/Inventory/Inventory';
 import SingUp from './Componants/SingUp/SingUp';
 import AddProducts from './Componants/AddProducts/AddProducts';
 import ManageProducts from './Componants/ManageProducts/ManageProducts';
@@ -26,11 +25,6 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
         <Route path='/blogs' element={<Blogs />} />
-        <Route path='/inventory' element={
-          <RequireAuth>
-            <Inventory />
-          </RequireAuth>
-        } />
         <Route path='ProductDetails/:id' element={
           <RequireAuth>
             <ProductDetails />
@@ -54,7 +48,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/singup' element={<SingUp />} />
         <Route path='/resetpass' element={<ResetPassword />} />
-        {/* <Route path='*' element={<PageNotFound />} /> */}
+        <Route path='*' element={<PageNotFound />} />
       </Routes>
       <Footer />
     </div>
