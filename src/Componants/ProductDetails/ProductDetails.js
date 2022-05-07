@@ -6,13 +6,13 @@ const ProductDetails = () => {
 
     const { id } = useParams();
     const [product, setProduct] = useState([]);
-    const {quantity}  = product;
+    
     useEffect(() => {
         const url = `https://boiling-fjord-43680.herokuapp.com/productapi/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
-    }, [id, quantity]);
+    }, [id]);
 
     // handleDeliverd function //
     const handleDeliverd = () => {
@@ -22,7 +22,9 @@ const ProductDetails = () => {
         }
         const newQuantity = parseFloat(quantity - 1);
         const updateQuan = { quantity: newQuantity };
-       
+        const displayQuantity = { ...product, quantity: newQuantity};
+        setProduct(displayQuantity);
+
         const url = `https://boiling-fjord-43680.herokuapp.com/productapi/${id}`;
         fetch(url, {
             method: 'PUT',
@@ -37,7 +39,7 @@ const ProductDetails = () => {
                 toast.success("Item Deliverd Successfully", {
                     position: toast.POSITION.TOP_CENTER
                 });
-
+                
             });
 
     }
@@ -55,7 +57,9 @@ const ProductDetails = () => {
         }
         const newQuantity = parseFloat(quantity + perviousQuantity);
         const updateQuan = { quantity: newQuantity};
-
+        const displayQuantity = { ...product, quantity: newQuantity };
+        setProduct(displayQuantity);
+        
         const url = `https://boiling-fjord-43680.herokuapp.com/productapi/${id}`;
         fetch(url, {
             method: 'PUT',

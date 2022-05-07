@@ -11,7 +11,7 @@ const MyItem = () => {
         const url = `https://boiling-fjord-43680.herokuapp.com/productapi?email=${email}`;
         fetch(url)
             .then(res => res.json())
-            .then(data => setProduct(data));
+            .then(data => console.log(data));
     }, [user]);
 
     return (

@@ -14,6 +14,7 @@ import ManageProducts from './Componants/ManageProducts/ManageProducts';
 import ProductDetails from './Componants/ProductDetails/ProductDetails';
 import Blogs from './Componants/Blogs/Blogs';
 import MyItem from './Componants/MyItem/MyItem';
+import PageNotFound from './Componants/PageNotFound/PageNotFound';
 
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/singup' element={<SingUp />} />
         <Route path='/resetpass' element={<ResetPassword />} />
+        {/* <Route path='*' element={<PageNotFound />} /> */}
       </Routes>
       <Footer />
     </div>
