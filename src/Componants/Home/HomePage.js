@@ -1,4 +1,4 @@
-import Product from '../Inventory/Product';
+import Product from '../Products/Product';
 import './HomePage.css';
 import useHook from '../useHook/useHook';
 import HeaderImg from '../Images/top-header.img.jpg';
