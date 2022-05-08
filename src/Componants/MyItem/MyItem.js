@@ -9,12 +9,15 @@ import auth from '../../FirebaseAuth';
 const MyItem = () => {
     const [product, setProduct] = useState([]);
     const [user] = useAuthState (auth)
-    console.log(product);
 
     useEffect(() => {
         const email = user.email;
         const url = `https://boiling-fjord-43680.herokuapp.com/email?email=${email}`;
-        fetch(url)
+        fetch(url, {
+            headers: {
+                "authorization": `${email} ${localStorage.getItem('accessToken')}`
+            }
+        })
             .then(res => res.json())
             .then(data => setProduct(data));
     }, [user]);
@@ -41,7 +44,7 @@ const MyItem = () => {
         <div>
             <section className='container my-5'>
                 <div className="row g-5">
-                    <h1 className='text-center text-danger fw-bold my-4'>User: {user.email}</h1><hr />
+                    <h1 className='text-center text-danger fw-bold my-4 p-5'>User: {user.email}</h1><hr />
                     
                     {
                         product.map(product =>

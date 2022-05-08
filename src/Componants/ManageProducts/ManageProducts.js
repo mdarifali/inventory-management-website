@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import './ManageProducts.css';
 import { AiFillDelete } from 'react-icons/ai';
 import { MdNoteAdd } from 'react-icons/md';
-import useHook from '../useHook/useHook';
 import { Link } from 'react-router-dom';
 
 const ManageProducts = () => {
-    const [products] = useHook();
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        const url = `https://boiling-fjord-43680.herokuapp.com/productapi`;
+        
+        fetch(url)
+
+            .then(res => res.json())
+            .then(data => {
+                setProducts(data)
+            })
+    }, [products]);
+
 
     const handleDelete = id => {
         const confirm = window.confirm('Do you want to Delete');

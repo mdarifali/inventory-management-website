@@ -42,10 +42,10 @@ const Login = () => {
             })
                 .then(res => res.json())
                 .then(result => {
-                    console.log('Success', result);
+                    localStorage.setItem('accessToken', result.accessToken);
+                    navigate(form);
             })
-
-            navigate(form);
+            
         }
         
     }, [user])
@@ -93,7 +93,6 @@ const Login = () => {
     const handleLogin = e => {
         e.preventDefault();
         signInWithEmailAndPassword(userInfo.email, userInfo.password);
-        console.log(userInfo.email);
         
     };
 
