@@ -44,6 +44,7 @@ const ProductDetails = () => {
 
     }
 
+    
     // handleStockInce function //
     const handleStockInce = (e) => {
         e.preventDefault();
