@@ -4,11 +4,10 @@ Live Site Link: https://inventory-management-web-d2fba.firebaseapp.com/
 
 Description:
 
-- Manage Inventory
-- Add Items
-- User Add Items Manage
-- User Login
-- google sing
-- Product Quantity add Delete
-- Server useing for Mongodb with Heroku
-- NodeJS with React
+- Project Summary: This Project is a fully functional and responsive online shopping website that 
+works front-end and back-end.
+- Client features: This website is only for seller they manage all products. Sellers can add new 
+products, update product stock and delete. Users can login and signup using firebase to make sure only 
+authorized users can add.
+- Technology Used: React, React Router, Node.js, Express.js, MongoDB, Bootstrap CSS, Heroku,
+Firebase and JWT
